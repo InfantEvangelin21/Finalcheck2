@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "kubernetescluster-ca56"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "kubernetescluster-ca56"
+  template:
+    metadata:
+      labels:
+        app: "kubernetescluster-ca56"
+    spec:
+      containers:
+        - name: "kubernetescluster-ca56"
+          image: "containerregistry010.azurecr.io/kubernetescluster"
+          ports:
+          - containerPort: 80
